@@ -1,0 +1,197 @@
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  background-color: #E4E5E7;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.aside {
+  height: 400px;
+}
+.main {
+  height: 400px;
+}
+.d-flex {
+  display: flex;
+}
+.task-title {
+  font-weight: 400;
+  padding-top: 5px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.gray {
+  color: #BDBDBD;
+}
+.task-title--done {
+  text-decoration: line-through;
+  color: #CDCDCD;
+}
+.task-item__buttons {
+  display: flex;
+  column-gap: 5px;
+  flex-shrink: 0;
+}
+.notify-holder {
+  height: 60px;
+  margin-bottom: 20px;
+}
+.empty-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.empty-list__title {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+.empty-list__icon {
+  color: #42BE2A;
+  font-size: 32px;
+}
+.btn-action {
+    background-color: #e0e5ea;
+    padding: 8px 10px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    transition: opacity 0.2s ease-in;
+    opacity: 0.5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-action:hover {
+    background-color: #e0e5ea;
+    opacity: 1;
+}
+
+.btn-action img {
+  pointer-events: none;
+}
+
+.none {
+  display: none !important;
+}
+
+.float-right {
+  float: right;
+}
+.copyright {
+  margin-top: 40px;
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Новые стили */
+.task-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-description {
+  display: none;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-top: 5px;
+  white-space: pre-wrap;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.task-item.expanded .task-description {
+  display: block;
+}
+
+.task-item {
+  padding: 15px 20px;
+}
+
+/* Подсказки для кнопок */
+.btn-action[title] {
+  position: relative;
+}
+
+.btn-action[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+/* Для поля ввода описания */
+#taskDescriptionInput {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Уведомления */
+.alert-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Режим редактирования */
+.task-edit-title {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.task-edit-description {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.edit-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-controls button {
+  flex: 1;
+}
